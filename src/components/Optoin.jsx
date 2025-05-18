@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function Option({ value, onChange }) {
   return (
 		<select id="length" name="length" 
 		value={value} onChange={e => onChange(e.target.value)}>
-			<option value="short">짧게</option>
-			<option value="medium">중간 길이로</option>
-			<option value="long">길게</option>
+			<option value="300자 이내">300자 이내</option>
+			<option value="300자 ~ 600자">300자 ~ 600자</option>
+			<option value="600자 이상">600자 이상</option>
 		</select>
   );
 }

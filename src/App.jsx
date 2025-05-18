@@ -1,10 +1,15 @@
-import './App.css'
-import MainApp from './components/MainApp'
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainApp from "./components/MainApp"
+import SummaryPage from "./components/SummaryPage";
 
-function App() {
+export default function App() {
   return (
-    <MainApp />
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainApp />} />
+        <Route path="/summary" element={<SummaryPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App
