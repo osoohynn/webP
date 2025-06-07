@@ -19,8 +19,8 @@ export default function RecentPost({ newUrl }) {
   if (urls.length === 0) return null;
 
   return (
-    <div style={{ marginTop: 20 }}>
-      <h2>최근 요약한 글</h2>
+    <div style={{ marginTop: 40 }}>
+      <div style={{ fontSize: 20, marginBottom: 8, fontWeight: 500 }}>최근 요약한 글</div>
       <ul style={{ listStyle: "none", padding: 0, 
                   display: "flex", flexDirection: "column", 
                   alignItems: "center" }}>
