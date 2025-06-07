@@ -49,7 +49,7 @@ export default function DefinitionPopup({ selectedText, definition, pos, onClose
         style={{
           display: "inline-block",
           padding: "6px 12px",
-          background: "#4285F4",
+          background: "#FF7878",
           color: "#fff",
           borderRadius: 4,
           textDecoration: "none",
