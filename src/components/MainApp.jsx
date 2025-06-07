@@ -39,7 +39,7 @@ export default function MainApp() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        maxWidth: 500
+        width: 500
       }}>
         <h1>블로그 요약기</h1>
         <PostInput summary={summary} />

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import "../App.css";
+import { Search } from "lucide-react";
 
 export default function PostInput({ summary }) {
   const [value, setValue] = useState('');
@@ -17,9 +19,10 @@ export default function PostInput({ summary }) {
       display: "flex",
       alignItems: "center",
       borderRadius: 1000,
-      border: "#FF5555 2px solid",
+      border: "#FF5555 1.5px solid",
       overflow: "hidden",
-      fontSize: 24
+      fontSize: 24,
+      boxShadow: "0px 0px 1px 1px rgba(255, 133, 133, 0.5)"
     }}>
       <input
         type="text"
@@ -28,7 +31,7 @@ export default function PostInput({ summary }) {
         onChange={e => setValue(e.target.value)}
         style={{
           flex: 1,
-          padding: "8px 16px",
+          padding: "8px 24px",
           height: "100%",
           border: "none",
           outline: "none",
@@ -43,7 +46,9 @@ export default function PostInput({ summary }) {
         color: "white",
         border: "none",
         fontSize: 20
-      }}>🔍</button>
+      }}>
+        <Search size={28} />
+      </button>
     </form>
   );
 }

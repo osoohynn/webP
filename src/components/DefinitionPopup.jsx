@@ -15,7 +15,11 @@ export default function DefinitionPopup({ selectedText, definition, pos, onClose
   if (!selectedText) return <></>;
 
   return ReactDOM.createPortal(
-    <div style={{ ...style, top: pos.y, left: pos.x }} className="popup">
+    <div style={{ ...style, top: pos.y, left: pos.x, userSelect: "none" }} className="popup"
+    onMouseDown={(e) => e.stopPropagation()}
+      onMouseUp={(e) => e.stopPropagation()}
+      onClick={(e) => e.stopPropagation()}
+    >
       <button
         onClick={onClose}
         style={{

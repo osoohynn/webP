@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Favicon from "./Favicon";
 
 export default function RecentPost({ newUrl }) {
   const [urls, setUrls] = useState(() => {
@@ -20,23 +21,43 @@ export default function RecentPost({ newUrl }) {
   return (
     <div style={{ marginTop: 20 }}>
       <h2>최근 요약한 글</h2>
-      <ul style={{ listStyle: "none", padding: 0 }}>
+      <ul style={{ listStyle: "none", padding: 0, 
+                  display: "flex", flexDirection: "column", 
+                  alignItems: "center" }}>
         {urls.map((url, idx) => (
           <li key={url} style={{
             border: "1px solid #ddd",
-            borderRadius: 4,
+            borderRadius: 100,
             padding: 8,
-            marginBottom: 6,
+            paddingTop: 4,
+            paddingBottom: 4,
+            marginBottom: 10,
+            maxWidth: 300,
+            overflow: "hidden",
+            width: "min-content",
+            color: "#888",
+            display: "flex",
+            alignItems: "center",
+            gap: 6
           }}>
+            <Favicon domain={url} />
             <a
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ textDecoration: "none", color: "#007acc" }}
+              style={{
+                textDecoration: "none",
+                color: "#888",
+                fontSize: 14,
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
             >
               {url}
             </a>
           </li>
+          
         ))}
       </ul>
     </div>
