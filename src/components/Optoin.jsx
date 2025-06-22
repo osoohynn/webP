@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 
-export default function Option({ value, onChange }) {
+export default function Option({ value, onChange }) { // 요약 길이 옵션 선택, value를 props로 넘겨서 선택된거를 색을 다르게 함
   return (
 	<div style={{
 		display: "flex",

@@ -6,9 +6,9 @@ export default function PostInput({ summary }) {
   const [value, setValue] = useState('');
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!value.trim()) return;
-    summary(value);
+    e.preventDefault(); // form태그에서 기본 submit 액션을 막음 
+    if (!value.trim()) return; // 입력값 없으면 제출 불가
+    summary(value); // 요약 함수 호출
     setValue('');
   };
 

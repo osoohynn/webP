@@ -7,8 +7,8 @@ export default function SummaryPage() {
   const { state } = useLocation();
   const navigate = useNavigate();
 
-  if (!state?.data) {
-    return <Navigate to="/" replace />;
+  if (!state?.data) { // 데이터가 없을 경우
+    return <Navigate to="/" replace />; // 메인 화면으로 이동
   }
 
   const { subject, summary, keywords } = state.data;

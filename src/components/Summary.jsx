@@ -1,10 +1,10 @@
 import { useSelectionDefinition } from "./useSelectionDefinition";
 import DefinitionPopup from "./DefinitionPopup";
-import React, { useEffect } from "react";
+import React from "react";
 
 export default function Summary({ data, onReset }) {
   const { subject, summary, keywords } = data;
-  const { selectedText, definition, pos, show, setShow } = useSelectionDefinition();
+  const { selectedText, definition, pos, show, setShow } = useSelectionDefinition(); // 드래그 기능이 담긴 커스텀 훅 사용
 
   return (
     <div style={{ padding: 20, position: "relative" }}>

@@ -12,11 +12,11 @@ const style = {
 };
 
 export default function DefinitionPopup({ selectedText, definition, pos, onClose }) {
-  if (!selectedText) return <></>;
+  if (!selectedText) return <></>; // 선택된 텍스트가 없으면 빈 태그 반환
 
-  return ReactDOM.createPortal(
+  return ReactDOM.createPortal( // 팝업 생성
     <div style={{ ...style, top: pos.y, left: pos.x, userSelect: "none" }} className="popup"
-    onMouseDown={(e) => e.stopPropagation()}
+    onMouseDown={(e) => e.stopPropagation()} // 이벤트 안에서 이벤트 방지
       onMouseUp={(e) => e.stopPropagation()}
       onClick={(e) => e.stopPropagation()}
     >
@@ -43,7 +43,7 @@ export default function DefinitionPopup({ selectedText, definition, pos, onClose
       </div>
 
       <a
-        href={`https://www.google.com/search?q=${encodeURIComponent(selectedText)}`}
+        href={`https://www.google.com/search?q=${encodeURIComponent(selectedText)}`} // 구글 검색으로 이동
         target="_blank"
         rel="noopener noreferrer"
         style={{
